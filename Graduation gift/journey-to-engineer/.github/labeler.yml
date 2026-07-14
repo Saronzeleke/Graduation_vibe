@@ -1,0 +1,46 @@
+# Automatic PR labeling based on file paths
+
+documentation:
+  - '**/*.md'
+  - 'docs/**/*'
+
+dependencies:
+  - 'package.json'
+  - 'package-lock.json'
+
+configuration:
+  - '**/*.config.*'
+  - '.github/**/*'
+  - 'tsconfig.json'
+
+components:
+  - 'src/components/**/*'
+
+pages:
+  - 'src/app/**/*'
+
+api:
+  - 'src/app/api/**/*'
+
+database:
+  - 'supabase/**/*'
+  - '**/*.sql'
+
+tests:
+  - '**/*.test.*'
+  - 'src/test/**/*'
+
+styles:
+  - '**/*.css'
+  - 'tailwind.config.*'
+
+types:
+  - 'src/types/**/*'
+  - '**/*.d.ts'
+
+actions:
+  - 'src/lib/actions/**/*'
+
+utilities:
+  - 'src/lib/utils/**/*'
+  - 'src/lib/validations/**/*'

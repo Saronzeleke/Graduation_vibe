@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    
+    /* Light Theme Colors - BRIGHTER & MORE CELEBRATORY */
+    --color-gold: #FFD700;
+    --color-gold-light: #FFED4E;
+    --color-gold-dark: #FFB800;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #FAFBFC;
+    --color-bg-tertiary: #F0F2F5;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #4B5563;
+    --color-border: #E5E7EB;
+    --color-celebration: #FF6B9D;
+    --color-success: #10B981;
+  }
+  
+  .dark {
+    /* Dark Theme Colors */
+    --color-bg-primary: #0F1419;
+    --color-bg-secondary: #1A1F2E;
+    --color-bg-tertiary: #252B3B;
+    --color-text-primary: #F9FAFB;
+    --color-text-secondary: #9CA3AF;
+    --color-border: #374151;
+  }
+  
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-family: var(--font-inter);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+    letter-spacing: -0.02em;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Selection colors - Brighter gold */
+  ::selection {
+    background-color: #FFD700;
+    color: #1A1A1A;
+  }
+}
+
+@layer components {
+  /* Glass effect utility */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+  }
+  
+  .dark .glass-effect {
+    background: rgba(26, 31, 46, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+  
+  /* Celebration glow utility */
+  .celebration-glow {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3),
+                0 0 60px rgba(255, 215, 0, 0.15);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* GPU-accelerated transforms */
+  .gpu-accelerate {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
