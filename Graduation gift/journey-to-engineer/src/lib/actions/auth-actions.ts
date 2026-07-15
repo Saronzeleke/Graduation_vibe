@@ -28,7 +28,7 @@ export async function signIn(formData: FormData) {
     return { error: null }
   } catch (error) {
     if (error instanceof ZodError) {
-      const firstError = error.errors[0]
+      const firstError = error.issues[0]
       return { error: firstError.message }
     }
     

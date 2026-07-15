@@ -53,7 +53,7 @@ export async function submitMessage(formData: FormData) {
   } catch (error) {
     // Handle validation errors
     if (error instanceof ZodError) {
-      const firstError = error.errors?.[0]
+      const firstError = error.issues?.[0]
       if (firstError) {
         return {
           success: false,
